@@ -18,7 +18,9 @@ jobs:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install requests google-genai
+        run: |
+          sudo apt-get update && sudo apt-get install -y fonts-dejavu-core fonts-liberation
+          pip install -r requirements.txt
 
       - name: Run Automation Script
         env:
